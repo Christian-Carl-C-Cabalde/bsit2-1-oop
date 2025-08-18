@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Student student = new Student();
+        gradeCalculator student = new gradeCalculator();
 
         String studentName = "John Smith";
         double average = student.calculateAverage(85.5, 92.0, 78.5, 90.0);
