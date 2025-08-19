@@ -1,30 +1,43 @@
-public class bankAccount {
+class BankAccount {
     static String bankName = "Liceo Bank";
-    static int totalAccounts = 0;
     static double interestRate = 0.03;
-    static int accountCount = 1;
+    static int totalAccounts = 0;
 
-    String accountNumber;
-    String accountHolderName;
-    double balance;
+    String accountNumber = "";
+    String accountHolderName = "";
+    double balance = 0;
 
-    bankAccount (String accountName, double initialBalance){
-        accountNumber = generateAccountNumber();
-        accountHolderName = accountName;
-        balance = initialBalance;
+    BankAccount(String accountHolderName, double initialBalance) {
         totalAccounts++;
-        System.out.println("Account Created " + accountNumber + " for " + accountName + " with initial balance: $" + initialBalance);
+        this.accountHolderName = accountHolderName;
+        this.balance = initialBalance;
+        this.accountNumber = generateAccountNumber();
+        System.out.println("Account Created: " + accountNumber + " for " + accountHolderName + " with initial balance: $" + initialBalance);
     }
 
-    static String generateAccountNumber(){
-        return String.format("ACC%03d", accountCount++);
+    static String generateAccountNumber() {
+        return "ACC" + String.format("%03d", totalAccounts);
     }
 
-    double calculateInterest(){
+    void deposit(double amount) {
+        balance += amount;
+        System.out.println(accountHolderName + " deposited $" + amount + ". New balance: $" + balance);
+    }
+
+    void withdraw(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+            System.out.println(accountHolderName + " withdrew $" + amount + ". New balance: $" + balance);
+        } else {
+            System.out.println(accountHolderName + " attempted to withdraw $" + amount + ". Insufficient balance.");
+        }
+    }
+
+    double calculateInterest() {
         return balance * interestRate;
     }
 
-    public void displayAccountInfo(){
-        System.out.println("Bank Name: " + bankName + "\nInterest Rate: " + interestRate);
+    void displayAccountInfo() {
+        System.out.println(accountHolderName + "'s interest: $" + calculateInterest());
     }
 }
