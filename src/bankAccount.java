@@ -1,4 +1,4 @@
-class BankAccount {
+class bankAccount {
     static String bankName = "Liceo Bank";
     static double interestRate = 0.03;
     static int totalAccounts = 0;
@@ -7,7 +7,7 @@ class BankAccount {
     String accountHolderName = "";
     double balance = 0;
 
-    BankAccount(String accountHolderName, double initialBalance) {
+    bankAccount(String accountHolderName, double initialBalance) {
         totalAccounts++;
         this.accountHolderName = accountHolderName;
         this.balance = initialBalance;
