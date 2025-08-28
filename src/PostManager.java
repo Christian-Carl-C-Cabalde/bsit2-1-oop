@@ -8,7 +8,7 @@ public class PostManager {
         for (int n : interactions) sum += n;
         return sum;
     }
-
+    
     public String getCategoryRating(int engagementScore) {
         if (engagementScore >= 1000) return "Viral";
         if (engagementScore >= 500) return "Popular";
