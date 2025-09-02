@@ -1,5 +1,9 @@
 public class Main {
-    public static void main (String[] args){
-        System.out.println("Main Branch!");
+    public static void main(String[] args) {
+        
+        LibraryManager library = new LibraryManager();
+        library.showBooks();
+        library.addBook();
+        library.removeBook();
     }
 }
