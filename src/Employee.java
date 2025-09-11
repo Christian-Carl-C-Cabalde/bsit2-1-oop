@@ -1,0 +1,27 @@
+public class Employee {
+    protected String name = "";
+    protected int employeeId = 0;
+    protected double baseSalary = 0.0;
+    protected String department = "";
+
+    public Employee (String name, int employeeId, double baseSalary, String department){
+        this.name = name;
+        this.employeeId = employeeId;
+        this.baseSalary = baseSalary;
+        this.department = department;
+        System.out.println("Employee " + name + " has been hired in " + department + " department.");
+    }
+
+    public void displayInfo(){
+        System.out.println("Name: " + name + "\nEmployee ID: " + employeeId + "\nDepartment: " + department + "\nBase salary: " + baseSalary);
+
+    }
+
+    public double calculateSalary(){
+        return baseSalary;
+    }
+
+    public void work(){
+        System.out.println(name + " is working on general tasks");
+    }
+}
